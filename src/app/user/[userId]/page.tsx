@@ -8,10 +8,9 @@ interface PageProps {
   params: { userId: number };
 }
 
-export async function generateMetadata(
-  { params }: PageProps,
-  parent?: ResolvingMetadata
-): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: PageProps): Promise<Metadata> {
   // read route params
   const userId = params.userId;
 
