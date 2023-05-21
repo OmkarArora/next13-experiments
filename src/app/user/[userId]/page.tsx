@@ -1,3 +1,9 @@
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { Metadata, ResolvingMetadata } from "next";
 
 function delay(ms: number) {
@@ -42,6 +48,34 @@ export default async function Page(props: PageProps) {
   return (
     <div className="min-h-screen">
       <div>Name: {json.name}</div>
+      <div style={{ width: 200, height: 500 }}>
+        <Accordion type="single" collapsible>
+          <AccordionItem value="item-1">
+            <AccordionTrigger className="text-orange-900">
+              Is it accessible?
+            </AccordionTrigger>
+            <AccordionContent>
+              Yes. It adheres to the WAI-ARIA design pattern.
+            </AccordionContent>
+          </AccordionItem>
+          <AccordionItem value="item-2">
+            <AccordionTrigger>Acc 2</AccordionTrigger>
+            <AccordionContent>
+              <div style={{ width: 100, height: 100, background: "red" }} />
+            </AccordionContent>
+          </AccordionItem>
+        </Accordion>
+      </div>
+      <div style={{ width: 200, height: 500 }}>
+        <Accordion type="single" collapsible>
+          <AccordionItem value="item-1">
+            <AccordionTrigger>Acc 2</AccordionTrigger>
+            <AccordionContent>
+              <div style={{ width: 100, height: 100, background: "red" }} />
+            </AccordionContent>
+          </AccordionItem>
+        </Accordion>
+      </div>
     </div>
   );
 }
